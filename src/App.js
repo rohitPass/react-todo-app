@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Menu from "./components/Menu";
+import Home from "./components/Home"
 import Create from "./components/Create";
 import Update from "./components/Update";
-import Home from "./components/Home";
 import Pnf from './components/Pnf';
 
 
@@ -11,12 +12,12 @@ function App(props) {
     return (
         <BrowserRouter>
             <Menu/>
-
+            <ToastContainer theme={'colored'} position ={'top-right'} />
             <Routes>
-                <Route path={`/`} element={<Home/>}></Route>
-                <Route path={`/create`} element={<Create/>}></Route>
-                <Route path={`/update/:id`} element={<Update/>}></Route>
-                <Route path={`/*`} element={<Pnf/>} ></Route>
+                <Route path={`/`} element={<Home/>} />
+                <Route path={`/create`} element={<Create/>} />
+                <Route path={`/update/:id`} element={<Update/>} />
+                <Route path={`/*`} element={<Pnf/>} />
             </Routes>
         </BrowserRouter>
     )
